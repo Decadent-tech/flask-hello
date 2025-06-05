@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .submission-list {
+            margin-top: 40px;
+            text-align: left;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .submission-list li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submit Your Name</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Your name" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if submissions %}
+    <div class="submission-list">
+        <h2>Submissions</h2>
+        <ul>
+            {% for line in submissions %}
+            <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <p>
+        <a href="/download">
+        <button>Download Submissions as CSV</button>
+        </a>
+    </p>
+</body>
+</html>

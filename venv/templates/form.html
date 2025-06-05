@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Form</title>
+</head>
+<body>
+    <h1>cute</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Your name" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Submitted Names:</h2>
+    <ul>
+        {% for line in submissions %}
+            <li>{{ line }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
