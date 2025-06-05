@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # ✅ Logging function
 def write_to_google_sheet(timestamp, name):
-    url = "https://api.sheety.co/ac35df7dd9d976dfce2bcf532b4e993f/flaskSubmissions/sheet1"
+    url = "*********************************"
     data = {
         "sheet1": {
             "timestamp": str(timestamp),
